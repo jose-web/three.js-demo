@@ -1,6 +1,10 @@
+import * as THREE from "./three/three.module.js"
+import { OrbitControls } from "./three/OrbitControls.js"
+
 let scene, camera, renderer, cube
 
 window.addEventListener("load", onload)
+window.addEventListener('resize', resize);
 
 function onload(){
     scene = new THREE.Scene()
@@ -9,11 +13,13 @@ function onload(){
     renderer.shadowMap.enabled = true
 
     document.body.appendChild(renderer.domElement)
-    
+
     createCube()
     // createGrid()
     createLight()
     createPlane()
+    resize()
+
     animate()
 }
 
@@ -48,7 +54,6 @@ function createGrid(){
 
 function animate(){
     requestAnimationFrame(animate)
-    resize()
 
     cube.rotation.x += 0.01
     cube.rotation.y += 0.01
@@ -66,4 +71,6 @@ function resize(){
     camera.position.z = 5
     camera.position.y = -10
     camera.rotation.x = 1
+
+    new OrbitControls(camera, renderer.domElement)
 }
