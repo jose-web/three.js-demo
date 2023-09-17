@@ -19,7 +19,7 @@ function onload(){
     createLight()
     createPlane()
     resize()
-
+    controls()
     animate()
 }
 
@@ -71,6 +71,16 @@ function resize(){
     camera.position.z = 5
     camera.position.y = -10
     camera.rotation.x = 1
+}
 
-    new OrbitControls(camera, renderer.domElement)
+function controls(){
+    const controls = new OrbitControls(camera, renderer.domElement)
+    
+    // controls.enableZoom = false
+    controls.minDistance = 3
+    controls.maxDistance = 10
+
+    // controls.screenSpacePanning = false
+    controls.enableDamping = true
+    controls.dampingFactor = 0.1
 }
