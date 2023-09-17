@@ -1,5 +1,18 @@
 {
+  "name": "threejs-demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx parcel src/index.html"
+  },
   "devDependencies": {
     "parcel": "^2.9.3"
+  },
+  "dependencies": {
+    "@parcel/config-default": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.2"
+  },
+  "staticFiles": {
+    "staticPath": "assets",
+    "staticOutPath": "assets"
   }
 }
