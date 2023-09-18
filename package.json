@@ -1,8 +1,9 @@
 {
   "name": "threejs-demo",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "build": "npx parcel src/index.html"
+    "start": "parcel src/index.html -p 3000 --open",
+    "build": "parcel build src/index.html --public-url ."
   },
   "devDependencies": {
     "parcel": "^2.9.3"
