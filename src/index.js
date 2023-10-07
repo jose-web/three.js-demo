@@ -5,7 +5,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader"
 
 const rendered = new THREE.WebGLRenderer({antialias: true})
 rendered.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(rendered.domElement)
+// document.body.appendChild(rendered.domElement)
 
 rendered.setClearColor(0xA3A3A3)
 
@@ -31,6 +31,7 @@ rgbeLoader.load('./assets/hdr/MR_INT-005_WhiteNeons_NAD.hdr',texture=>{
 
     gltfLoader.load("./assets/dae_villages__ancient_egyptian_scroll_maker/scene.gltf", gltf=>{
         scene.add(gltf.scene)
+        document.body.appendChild(rendered.domElement)
     })
 })
 
